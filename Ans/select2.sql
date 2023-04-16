@@ -79,4 +79,4 @@ select * from employees where month(hire_date) = 4;
   select * from employees where day(hire_date) < 19;
 -- 35. From the following table, write a  query to identify those employees who have been working as a SALESMAN and month portion of the experience is more than 10. 
 -- Return complete information about the employees.  
-select * from employees where job_id like '%MAN%' and (current_date())-year(hire_date) > 10;
+select * from employees where job_id like '%MAN%' and datediff(curdate(),hire_date)/30 > 10;
