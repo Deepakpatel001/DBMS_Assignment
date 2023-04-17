@@ -8,6 +8,7 @@ select concat(first_name," ",Last_name) as 'Full Name', EMAIL from employees;
 	select department_id , count(*) from employees group by department_id;
 -- 4. Write a query to calculate the total revenue generated from sales, and alias the sum as
 -- "Total Sales Revenue"
+
 -- 5. Display all the employees whose salary is greater than the average salary of their
 -- department.
 
@@ -15,15 +16,21 @@ select * from Employees where salary > (select avg(salary) from employees);
 -- 6. Display employees where length of employee name is 5
 select * from Employees where length(First_name) =5;
 -- 7. Display all employees where employee name start with J and ends with S
-select * from employees where substr()
+ select * from employees where substr(first_name,1,1) in ('J','S');
 -- 8. Display all employees where employee does not belong to 10,20,40
 -- department_id
+select * from employees where DEPARTMENT_ID not in (10,20,40);
 -- 9. Display all employees where jobs do not belong to the PRESIDENT and MANAGER?
+
 -- 10. Display all three figures salary in emp table
+select * from employees where length(truncate(salary,0)) =3;
 -- 11. Display all records in emp table for employee who does not receive any commission
+select * from employees where COMMISSION_PCT = 0;
 -- 12. Display all employee names where the first character could be anything, but the second
 -- character should be L?
+select * from employees where substr(first_name,2,1) = 'l';
 -- 13. Display nth highest and nth lowest salary in emp table?
+select
 -- 14. Display all the departments where the department has 3 employees?
 -- 15. Display emp name and corresponding subordinates. Use CONNECT BY clause.
 -- 16. Display all employee name, sal, dept id,department name from emp, dept table where all
